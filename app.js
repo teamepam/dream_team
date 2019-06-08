@@ -1,8 +1,15 @@
 const express = require('express');
 const app = express();
+const swaggerize = require('swaggerize-express');
+const path = require('path');
 
 const dataBase = require('./dataBase').getInstance();
 dataBase.setModels();
+
+app.use(swaggerize({
+    api: path.resolve('./config/swagger.json'),
+    handlers: path.resolve('./routes')
+}));
 
 // const apiRouter = require('./routes/apiRouter');
 
