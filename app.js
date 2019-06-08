@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
+
 const swaggerize = require('swaggerize-express');
 const path = require('path');
 
+require('dotenv').config();
 const dataBase = require('./dataBase').getInstance();
 dataBase.setModels();
 
