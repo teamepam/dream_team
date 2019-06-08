@@ -4,7 +4,7 @@ require('dotenv').config();
 const dataBase = require('./dataBase').getInstance();
 dataBase.setModels();
 
-// const apiRouter = require('./routes/apiRouter');
+const apiRouter = require('./routes/apiRouter');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -21,7 +21,7 @@ const csvParse = require('./helpers/csvParse');
 
 csvParse('./testdata/orders.csv');
 
-// app.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 app.listen(3000, err => {
     err ? console.log(err) : console.log('listening 3000...');
