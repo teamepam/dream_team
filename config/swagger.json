@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "schemes": [
-    "https"
+    "http"
   ],
-  "host": "localhost",
+  "host": "localhost:3000",
   "basePath": "/",
   "info": {
     "description": "Powerful collaboration, code review, and code management for open source and private projects.\n",

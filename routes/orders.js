@@ -1,10 +1,9 @@
-
+const dataBase = require('../dataBase').getInstance();
 
 module.exports = {
-    get(req, res, next) {
-
-        res.json({
-            msg: 'OK'
-        })
+    async get (req, res, next) {
+        const Order = dataBase.getModel('Orders');
+        const orders = await Order.findAll({});
+        res.json(orders);
     }
 };
