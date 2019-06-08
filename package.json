@@ -21,8 +21,9 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "mysql2": "^1.6.5",
+    "pm2": "^3.5.1",
     "sequelize": "^5.8.7",
-    "swaggerize-express": "^4.0.5",
-    "pm2": "^3.5.1"
+    "swagger-ui-express": "^4.0.6",
+    "swaggerize-express": "^4.0.5"
   }
 }
