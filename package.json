@@ -4,7 +4,7 @@
   "description": "The service which transforms data, from different CSV files into DB tables and aggregates data that can be reached through REST API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/WhoAmI7/epam-js-hiring-camp-lviv/blob/master/README.md",
   "dependencies": {
+    "express": "^4.17.1",
     "mysql2": "^1.6.5",
     "sequelize": "^5.8.7"
   }
