@@ -6,8 +6,8 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./config/swagger.json');
 
 require('dotenv').config();
-//const dataBase = require('./dataBase').getInstance();
-//dataBase.setModels();
+const dataBase = require('./dataBase').getInstance();
+dataBase.setModels();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -33,12 +33,14 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "*");
     next();
 });
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use(swaggerize({
     api: path.resolve('./config/swagger.json'),
     handlers: path.resolve('./routes')
 }));
 
+
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const csvParse = require('./helpers/csvParse');
 
