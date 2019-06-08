@@ -1,14 +1,16 @@
 const Sequalize = require('sequelize');
 const fs = require('fs');
-const {resolve} = require('path');
+const { resolve } = require('path');
 
 module.exports = (() => {
     let instance;
 
     function initConnection() {
-        const client = new Sequalize('social', 'user', 'user', {
+
+        const client = new Sequalize('epam', 'user', 'user', {
             host: 'localhost',
-            dialect: 'mysql'
+            dialect: 'mysql',
+            insecureAuth: true
         });
         let models = {};
 
