@@ -1,5 +1,9 @@
 const ApiRouter = require('express').Router();
 
-ApiRouter.use();
+const userRouter = require('./userRouter');
+
+ApiRouter.use('/user', userRouter);
+ApiRouter.use('/order', orderRouter);
+
 
 module.exports = ApiRouter;
