@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "schemes": [
-    "https"
+    "http"
   ],
-  "host": "localhost",
+  "host": "localhost:3000",
   "basePath": "/",
   "info": {
-    "description": "Powerful collaboration, code review, and code management for open source and private projects.\n",
+    "description": "create npm script named serve which runs HTTP(s) server signaling with short message to console when ready.\n",
     "termsOfService": "https://help.github.com/articles/github-terms-of-service/#b-api-terms",
     "title": "GitHub",
     "version": "v3"
@@ -20,7 +20,6 @@
   "produces": [
     "application/json"
   ],
-  "description": "create npm script named serve which runs HTTP(s) server signaling with short message to console when ready.",
   "paths": {
     "/status": {
       "get": {

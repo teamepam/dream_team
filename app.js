@@ -19,12 +19,14 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "*");
     next();
 });
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use(swaggerize({
     api: path.resolve('./config/swagger.json'),
     handlers: path.resolve('./routes')
 }));
 
+
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const csvParse = require('./helpers/csvParse');
 
