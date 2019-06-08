@@ -15,8 +15,5 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     });
 
-
-    const Sex = sequelize.import('./Sex.js');
-    User.belongsTo(Sex, {foreignKey: 'sex_id'});
-    return User
+    return User;
 };
