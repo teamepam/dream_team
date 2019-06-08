@@ -6,7 +6,7 @@
   "host": "localhost:3000",
   "basePath": "/",
   "info": {
-    "description": "Powerful collaboration, code review, and code management for open source and private projects.\n",
+    "description": "create npm script named serve which runs HTTP(s) server signaling with short message to console when ready.\n",
     "termsOfService": "https://help.github.com/articles/github-terms-of-service/#b-api-terms",
     "title": "GitHub",
     "version": "v3"
@@ -38,7 +38,7 @@
     },
     "/orders": {
       "get": {
-        "description": "List public events.",
+        "description": "Returns orders in purchased status from users with status being active. Resource should respond with records sorted by total quantity in descending order.",
         "parameters": [
 
         ],

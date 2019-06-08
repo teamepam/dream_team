@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN
         }
     }, {
-        tableName: 'user',
+        tableName: 'users',
         timestamps: false
     });
 

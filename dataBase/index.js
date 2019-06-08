@@ -1,6 +1,6 @@
 const Sequalize = require('sequelize');
 const fs = require('fs');
-const {resolve} = require('path');
+const { resolve } = require('path');
 
 module.exports = (() => {
     let instance;
