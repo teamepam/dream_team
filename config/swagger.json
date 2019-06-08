@@ -20,11 +20,10 @@
   "produces": [
     "application/json"
   ],
-  "description": "create npm script named serve which runs HTTP(s) server signaling with short message to console when ready.",
   "paths": {
     "/status": {
       "get": {
-        "description": "Returns current system status which one of the following: good or bad and last_updated timestamp. Resource will indicate database missing or not reachable with bad status in response.",
+        "description": "create npm script named serve which runs HTTP(s) server signaling with short message to console when ready.",
         "parameters": [
         ],
         "responses": {
