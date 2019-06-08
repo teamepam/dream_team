@@ -26,15 +26,17 @@ program
     .parse(process.argv);
 
 if (program.users) {
+    const lastIndex =
     console.log('  ADD USERS  ....');
-    const [,,fileName] = process.argv;
+    const fileName = process.argv[process.argv.length-1];
+    console.log(process.argv);
     console.log(fileName);
     importUsers(fileName)
 }
 
 if (program.orders) {
     console.log('  ADD ORDERS  ....');
-    const [,,fileName] = process.argv;
+    const fileName = process.argv[process.argv.length-1];
     console.log(fileName);
     importOrders(fileName)
 }
