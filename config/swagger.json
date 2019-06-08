@@ -1,0 +1,117 @@
+{
+  "swagger": "2.0",
+  "schemes": [
+    "https"
+  ],
+  "host": "api.github.com",
+  "basePath": "/",
+  "info": {
+    "description": "Powerful collaboration, code review, and code management for open source and private projects.\n",
+    "termsOfService": "https://help.github.com/articles/github-terms-of-service/#b-api-terms",
+    "title": "GitHub",
+    "version": "v3"
+  },
+  "externalDocs": {
+    "url": "https://developer.github.com/v3/"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "oauth_2_0": {
+      "authorizationUrl": "https://github.com/login/oauth/authorize",
+      "description": "OAuth2 is a protocol that lets external apps request authorization to private\ndetails in a user's GitHub account without getting their password. This is\npreferred over Basic Authentication because tokens can be limited to specific\ntypes of data, and can be revoked by users at any time.\n",
+      "flow": "accessCode",
+      "scopes": {
+        "admin:org": "",
+        "admin:org_hook": "",
+        "admin:public_key": "",
+        "admin:repo_hook": "",
+        "delete_repo": "",
+        "gist": "",
+        "notifications": "",
+        "public_repo": "",
+        "read:org": "",
+        "read:public_key": "",
+        "read:repo_hook": "",
+        "repo": "",
+        "repo:status": "",
+        "repo_deployment": "",
+        "user": "",
+        "user:email": "",
+        "user:follow": "",
+        "write:org": "",
+        "write:public_key": "",
+        "write:repo_hook": ""
+      },
+      "tokenUrl": "https://github.com/login/oauth/access_token",
+      "type": "oauth2"
+    }
+  },
+  "paths": {
+    "/status": {
+      "get": {
+        "description": "Returns current system status which one of the following: good or bad and last_updated timestamp. Resource will indicate database missing or not reachable with bad status in response.",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/status"
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "get": {
+        "description": "List public events.",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/order"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "status": {
+      "type": "object",
+      "properties": {
+        "last_updated": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "order": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-require('dotenv').config();
+
 const dataBase = require('./dataBase').getInstance();
 dataBase.setModels();
 
