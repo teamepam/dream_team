@@ -6,8 +6,8 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./config/swagger.json');
 
 require('dotenv').config();
-//const dataBase = require('./dataBase').getInstance();
-//dataBase.setModels();
+const dataBase = require('./dataBase').getInstance();
+dataBase.setModels();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
