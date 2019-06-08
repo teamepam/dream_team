@@ -17,6 +17,10 @@ app.use(function (req, res, next) {
     next();
 });
 
+const csvParse = require('./helpers/csvParse');
+
+csvParse('./testdata/orders.csv');
+
 // app.use('/api', apiRouter);
 
 app.listen(3000, err => {
