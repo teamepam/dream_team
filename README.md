@@ -104,7 +104,7 @@ Good Luck and looking forward to see you on technical interview 😉
 
 
 
-TEST DATA
+CREATE TABLES
 
 ```
 create schema if not exists epam;
@@ -133,10 +133,34 @@ create table if not exists epam.`order`
     count     int         null,
     product   varchar(50) not null,
     status_id int         null,
+    user_id   int         not null,
     constraint order_status_id_fk
         foreign key (status_id) references epam.status (id)
+            on update cascade on delete cascade,
+    constraint order_users_id_fk
+        foreign key (user_id) references epam.users (id)
             on update cascade on delete cascade
 );
 
 
+```
+
+
+TEST DATA
+
+```
+INSERT INTO epam.users(name, status) VALUE ('Vlad', true);
+INSERT INTO epam.users(name, status) VALUE ('Valya', FALSE);
+INSERT INTO epam.users(name, status) VALUE ('Ruslan', TRUE);
+INSERT INTO epam.users(name, status) VALUE ('Viktor', FALSE);
+
+INSERT INTO epam.status(label) VALUE ('pending');
+INSERT INTO epam.status(label) VALUE ('purchased');
+INSERT INTO epam.status(label) VALUE ('canceled');
+
+INSERT INTO epam.`order`(count, product, status_id, user_id) VALUE (22, 'Apple', 1, 1);
+INSERT INTO epam.`order`(count, product, status_id, user_id) VALUE (5, 'Grushka', 2, 2);
+INSERT INTO epam.`order`(count, product, status_id, user_id) VALUE (3, 'Banana', 3, 3);
+INSERT INTO epam.`order`(count, product, status_id, user_id) VALUE (99, 'Orange', 2, 3);
+INSERT INTO epam.`order`(count, product, status_id, user_id) VALUE (1, 'Pomidor', 1, 2);
 ```
