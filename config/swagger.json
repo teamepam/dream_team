@@ -1,0 +1,86 @@
+{
+  "swagger": "2.0",
+  "schemes": [
+    "https"
+  ],
+  "host": "localhost",
+  "basePath": "/",
+  "info": {
+    "description": "Powerful collaboration, code review, and code management for open source and private projects.\n",
+    "termsOfService": "https://help.github.com/articles/github-terms-of-service/#b-api-terms",
+    "title": "GitHub",
+    "version": "v3"
+  },
+  "externalDocs": {
+    "url": "https://developer.github.com/v3/"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/status": {
+      "get": {
+        "description": "Returns current system status which one of the following: good or bad and last_updated timestamp. Resource will indicate database missing or not reachable with bad status in response.",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/status"
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "get": {
+        "description": "List public events.",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/order"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "status": {
+      "type": "object",
+      "properties": {
+        "last_updated": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "order": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
