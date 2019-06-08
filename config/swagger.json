@@ -20,6 +20,7 @@
   "produces": [
     "application/json"
   ],
+  "description": "create npm script named serve which runs HTTP(s) server signaling with short message to console when ready.",
   "paths": {
     "/status": {
       "get": {
@@ -38,7 +39,7 @@
     },
     "/orders": {
       "get": {
-        "description": "List public events.",
+        "description": "Returns orders in purchased status from users with status being active. Resource should respond with records sorted by total quantity in descending order.",
         "parameters": [
 
         ],
